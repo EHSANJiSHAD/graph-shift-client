@@ -1,0 +1,14 @@
+
+
+@media only screen and (max-width:388px) {
+    .logo{
+        width: 120px;
+        margin-left: -10px;
+    }
+}
+@media only screen and (max-width:1488px) and (min-width:299px) {
+    .logo{
+        width: 160px;
+        margin-left: -10px;
+    }
+}
