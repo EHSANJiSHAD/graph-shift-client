@@ -1,0 +1,65 @@
+[
+    {
+      "id": "628fd87bafb8d9c6d55e0d27",
+      "img": "https://i.ibb.co/ryKyVQG/aorus-geforce-rtx-3080-master-12g-01-500x500.png",
+      "price": 187000,
+      "name": "Gigabyte AORUS GeForce RTX 3080 MASTER 12GB GDDR6X",
+      "description": "The Gigabyte AORUS GeForce RTX 3080 MASTER 12G Graphics Card is integrated with a 12GB GDDR6X 384-bit memory interface and it features NVIDIA Ampere Streaming Multiprocessors. It is equipped with advanced 2nd generation Ray Tracing Cores and 3rd generation Tensor Cores with greater throughput. It delivers an 1830 MHz (Reference Card: 1710 MHz) core clock and a 19000 MHz memory clock.",
+      "minimum_order_quantity": 2,
+      "available_quantity": 65
+    },
+    {
+      "id": "628fd87b1703edeea160485e",
+      "img": "https://i.ibb.co/QXJjfY2/rtx-3070-noctua-oc-edition-01-500x500.png",
+      "price": 103000,
+      "name": "ASUS GeForce RTX 3070 Noctua OC Edition 8GB GDDR6",
+      "description": "The ASUS GeForce RTX 3070 Noctua OC Edition 8GB GDDR6 Graphics Card is the first graphics card to feature Noctua fans and a heatsink that has been co-engineered by Noctua. This potent pairing allows the ASUS GeForce RTX 3070 Noctua Edition to operate at lower GPU temperatures and produce less noise than any air-cooled graphics card in its class. ASUS and Noctua have come together to deliver the quietest air-cooled graphics card in their class. It features the all-new Ampere SM that brings 2X the FP32 throughput and improved power efficiency.",
+      "minimum_order_quantity": 3,
+      "available_quantity": 30
+    },
+    {
+      "id": "628fd87b9fbee5dfd5931eb6",
+      "img": "https://i.ibb.co/52GWNKb/rog-strix-lc-geforce-rtx-3090-ti-oc-edition-01-500x500.png",
+      "price": 130000,
+      "name": "ASUS ROG Strix LC GeForce RTX 3090 Ti OC Edition 24GB GDDR6X",
+      "description": "The ASUS ROG Strix LC GeForce RTX 3090 Ti OC Edition 24GB GDDR6X Gaming Graphics Card features NVIDIA Ampere Streaming Multiprocessors. The all-new Ampere SM brings 2X the FP32 throughput and improved power efficiency. It comes with 2nd Generation RT Cores and 3rd Generation Tensor Cores. it supports up to Boost clock 1860 MHz (OC mode)/ 1830 MHz (Gaming Mode).",
+      "minimum_order_quantity": 2,
+      "available_quantity": 60
+    },
+    {
+      "id": "628fd87bed7b104f9ab06cd8",
+      "img": "https://i.ibb.co/0Jgc3y8/tuf-gaming-geforce-rtx-3090-ti-oc-edition-01-500x500.png",
+      "price": 160000,
+      "name": "ASUS TUF Gaming GeForce RTX 3090 Ti OC Edition 24GB GDDR6X",
+      "description": "The ASUS TUF Gaming GeForce RTX 3090 Ti OC Edition Graphics Card features the all-new NVIDIA Ampere Streaming Multiprocessors that bring 2X the FP32 throughput and improved power efficiency. This GPU is equipped with 2nd Generation RT Cores so that you can experience 2X the throughput of 1st gen RT Cores, plus concurrent RT and shading for a whole new level of ray tracing performance.",
+      "minimum_order_quantity": 2,
+      "available_quantity": 50
+    },
+    {
+      "id": "628fd87b90564abd17cb1538",
+      "img": "https://i.ibb.co/BVJJDDP/geforce-gt-730-001-500x500.png",
+      "price": 7700,
+      "name": "GIGABYTE GeForce GT 730 2GB GDDR5 PCI EXPRESS",
+      "description": "The GIGABYTE GeForce GT 730 Graphics Card featured with an active fansink cooler, which forces air through a heatsink in order to dissipate heat from the GPU. It helps to recirculate the exhaust inside the case, this card is best used with cases that have adequate ventilation. This GIGABYTE GeForce GT 730 helps to Increase your computer's video performance.",
+      "minimum_order_quantity": 5,
+      "available_quantity": 85
+    },
+    {
+      "id": "628fd87b42b4fe9150764e09",
+      "img": "https://i.ibb.co/G0YbLLy/gtx-1050-ti-stormx-1-500x500.png",
+      "price": 20800,
+      "name": "Palit GeForce GTX 1050 Ti StormX 4GB GDDR5",
+      "description": "The Palit GeForce GTX 1050 Ti StormX 4GB GDDR5 Graphics Card is equipped with solid capacitors, ferrite core chokes, and an improved PWM design. It brings you better performance and thermal solutions. Turn your PC into a true gaming rig with the fast, powerful GeForce GTX 1050 Ti. It's powered by NVIDIA Pascal - the most advanced GPU architecture ever created.",
+      "minimum_order_quantity": 5,
+      "available_quantity": 90
+    },
+  {
+      "id": "628fd87b42b4fe9150764e09",
+      "img": "https://i.ibb.co/p1pFk0y/gtx-1650-low-profile-01-500x500.png",
+      "price": 24000,
+      "name": "ZOTAC GAMING GeForce GTX 1650 Low Profile 4GB GDDR6",
+      "description": "The ZOTAC GAMING GeForce GTX 1650 Low Profile Graphics Card is powered by the NVIDIA Turing architecture, bringing incredible performance to the latest games. It comes with 4GB GDDR6 ultra-fast memory. This Graphics card delivers 1590 MHz of boost clock. It offers DisplayPort 1.4 (up to 7680x4320@60Hz), HDMI 2.0b (up to 3840x2160@60Hz) and Dual Link DVI-D (up to 2560x1600 @ 60Hz).",
+      "minimum_order_quantity": 5,
+      "available_quantity": 88
+    }
+  ]

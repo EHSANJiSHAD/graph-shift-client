@@ -8,7 +8,7 @@ import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
-    <div  style={{background:'#0f172a'}}>
+    <div   class='bg-slate-900'>
       <Navbar></Navbar>
       <Routes>
          <Route path='/' element={<Home></Home>}></Route> 

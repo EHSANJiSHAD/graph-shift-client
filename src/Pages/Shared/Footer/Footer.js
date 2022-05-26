@@ -4,7 +4,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer class="footer p-10 bg-base-300 text-base-content bg-gradient-to-b from-sky-600 to-slate-800 ">
+        <footer class="footer p-10 bg-base-300 text-base-content bg-gradient-to-b from-sky-600 to-slate-900 ">
             <div>
                 <span class="footer-title">Services</span>
                 <a class="link link-hover">Branding</a>
