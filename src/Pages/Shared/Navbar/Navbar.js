@@ -1,9 +1,17 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo/logo.png'
+import auth from '../../../firebase.init';
 import './Navbar.css'
 
 const Navbar = () => {
+    const [user] = useAuthState(auth);
+    console.log(user)
+    const handleSignOut = ()=>{
+        signOut(auth);
+    }
     return (
         <div className="navbar bg-base-100  drop-shadow-2xl rounded-lg">
             <div className="navbar-start">
@@ -14,6 +22,13 @@ const Navbar = () => {
                     <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100  w-52 drop-shadow-2xl border-0 font-bold rounded-full">
                         <li className='btn btn-outline btn-error rounded-lg'><Link to='/'>HOME</Link></li>
                         <li className='btn btn-outline btn-primary  rounded-lg'><Link to='/blogs'>BLOGS</Link></li>
+                        <li >
+                            {
+                                user ? <button onClick={handleSignOut} className='btn btn-outline btn-secondary rounded-lg'>SIGN OUT</button>
+                                 : 
+                                 <Link className='btn btn-outline btn-secondary  rounded-lg' to='/login'>LOGIN</Link>
+                            }
+                        </li>
                         
                     </ul>
                 </div>
@@ -25,11 +40,22 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal p-0   hover:none">
                 <li className='btn btn-outline btn-error rounded-full font-bold'><Link to='/'>HOME</Link></li>
                 <li className='btn btn-outline btn-primary rounded-full font-bold'><Link to='/blogs'>BLOGS</Link></li>
+                <li className='btn btn-outline btn-secondary font-bold rounded-full'>
+                            {
+                                user 
+                                ? <button onClick={handleSignOut} >SIGN OUT</button>
+                                 : 
+                                 <Link  to='/login'>LOGIN</Link>
+                            }
+                        </li>
                     
                 </ul>
             </div>
-            <div className="navbar-end">
-                {/* <a className="btn  bg-gradient-to-b from-sky-600 to-slate-800 hover:from-slate-800 hover:to-sky-600 text-sky-200 hover:text-sky-300 drop-shadow-2xl border-0 font-bold rounded-full">LOG IN</a> */}
+            <div className="navbar-end ">
+                <div className='hidden lg:block'>
+                <a className="btn btn-outline btn-warning rounded-full ">{user.displayName}</a>
+                </div>
+                
             </div>
         </div>
     );
