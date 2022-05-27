@@ -1,6 +1,6 @@
 import './Banner.css'
 import React from 'react';
-import banner2 from '../../../assets/banner/5.jpg'
+import banner2 from '../../../assets/banner/7.jpg'
 
 
 const Banner = () => {
@@ -8,7 +8,7 @@ const Banner = () => {
         <div>
             <div class="carousel w-full mb-5">
                 <div class="carousel-item w-full">
-                    <img src={banner2} class="w-full h-72 opacity-100 rounded-lg shadow-lg" />
+                    <img src={banner2} class="w-full h-96 opacity-100 rounded-lg shadow-lg" />
                 </div>
             </div>
         </div>
