@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../../Shared/Footer/Footer';
 import Banner from '../Banner/Banner';
 import BusinessSummary from '../BusinessSummary/BusinessSummary';
+import ComingSoon from '../ComingSoon/ComingSoon';
 import Items from '../Items/Items';
 
 
@@ -16,6 +17,7 @@ const Home = () => {
             <BusinessSummary></BusinessSummary>
             <Progress></Progress>
             <Reviews></Reviews>
+            <ComingSoon></ComingSoon>
             <Footer></Footer>
             
         </div>

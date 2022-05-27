@@ -18,7 +18,7 @@ const Item = ({ item }) => {
                     <p>MINIMUM ORDER QUANTITY: {minimum_order_quantity}</p>
                     <p>AVAILABLE QUANTITY: {available_quantity}</p>
                     <div class="card-actions">
-                        <button class="btn btn-primary">Buy Now</button>
+                        <button class="btn btn-outline btn-primary rounded-xl font-bold">Buy Now</button>
                     </div>
                 </div>
             </div>

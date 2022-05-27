@@ -1,0 +1,21 @@
+  /* SCROLLBAR TRACK*/
+  ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 20px;
+  }
+
+  /* SCROLLBAR WIDTH */
+  ::-webkit-scrollbar {
+      width: 20px;
+  }
+
+  /* HANDLE BAR */
+  ::-webkit-scrollbar-thumb {
+      background: linear-gradient(rgb(26 22 21), rgb(0 171 205), rgb(209 192 0), rgb(232 0 146), rgb(26 22 21));
+      border-radius: 10px;
+  }
+
+  /* HANDLE BAR HOVER */
+  ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(rgb(26 22 21), rgb(232 0 146), rgb(209 192 0), rgb(0 171 205), rgb(26 22 21));
+  }
