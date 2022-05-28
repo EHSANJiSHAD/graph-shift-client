@@ -2,11 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Item = ({ item }) => {
-    const { name, price, id, description, img, minimum_order_quantity, available_quantity } = item;
+    const { name, price, _id, description, img, minimum_order_quantity, available_quantity } = item;
     const navigate = useNavigate();
-    const handleBuyNowButton = event =>{
-        event.preventDefault();
-        navigate('/purchase')
+    const handleBuyNowButton = id =>{
+        navigate(`/purchase/${id}`);
     }
     return (
         <div>
@@ -24,7 +23,7 @@ const Item = ({ item }) => {
                     <p>MINIMUM ORDER QUANTITY: {minimum_order_quantity}</p>
                     <p>AVAILABLE QUANTITY: {available_quantity}</p>
                     <div class="card-actions">
-                        <button onClick={handleBuyNowButton} class="btn btn-outline btn-primary rounded-xl font-bold">Buy Now</button>
+                        <button onClick={()=>handleBuyNowButton(_id)} class="btn btn-outline btn-primary rounded-xl font-bold">Buy Now</button>
                     </div>
                 </div>
             </div>
