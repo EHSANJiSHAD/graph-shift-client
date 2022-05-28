@@ -24,7 +24,7 @@ const Navbar = () => {
                         <li className='btn btn-outline btn-primary  rounded-lg'><Link to='/blogs'>BLOGS</Link></li>
                         <li >
                             {
-                                user ? <button onClick={handleSignOut} className='btn btn-outline btn-secondary rounded-lg'>SIGN OUT</button>
+                                user ? <button onClick={handleSignOut} className='btn btn-outline btn-secondary rounded-lg font-bold'>SIGN OUT</button>
                                  : 
                                  <Link className='btn btn-outline btn-secondary  rounded-lg' to='/login'>LOGIN</Link>
                             }
@@ -43,7 +43,7 @@ const Navbar = () => {
                 <li className='btn btn-outline btn-secondary font-bold rounded-full'>
                             {
                                 user 
-                                ? <button onClick={handleSignOut} >SIGN OUT</button>
+                                ? <button className='font-bold' onClick={handleSignOut} >SIGN OUT</button>
                                  : 
                                  <Link  to='/login'>LOGIN</Link>
                             }
@@ -51,9 +51,13 @@ const Navbar = () => {
                     
                 </ul>
             </div>
-            <div className="navbar-end ">
-                <div className='hidden lg:block'>
-                <a className="btn btn-outline btn-warning rounded-full ">{user.displayName}</a>
+            <div className="navbar-end avatar ">
+                <div className='hidden   lg:block rounded-full w-12 ring ring-primary ring-offset-base-100 ring-offset-2'>
+                <h6 className=" rounded-full ">
+                    {
+                        user ? <img className='rounded-full w-12' src={user?.photoURL} alt="" /> : ' '
+                    }
+                </h6>
                 </div>
                 
             </div>
