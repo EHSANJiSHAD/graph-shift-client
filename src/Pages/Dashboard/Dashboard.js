@@ -6,9 +6,11 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { MdOutlineReviews } from 'react-icons/md';
 import { AiOutlineUser } from 'react-icons/ai';
 import { FiUsers } from 'react-icons/fi';
+import useAdmin from '../../hooks/useAdmin';
 
 const Dashboard = () => {
     const [user] = useAuthState(auth)
+    const [admin] = useAdmin(user)
 
     return (
         <div>
@@ -31,10 +33,10 @@ const Dashboard = () => {
                     <li className='text-sm text-error '><Link to='/dashboard'> <AiOutlineHome/> MY ORDERS</Link></li>
                     <li className='text-sm text-warning '><Link to='/dashboard/addReviews'> <MdOutlineReviews/> ADD REVIEWS</Link></li>
                     <li className='text-sm text-lime-500 '><Link to='/dashboard/myProfile'> <AiOutlineUser/> MY PROFILE</Link></li>
-                    <li className='text-sm text-lime-500 '><Link to='/dashboard/users'> <FiUsers/> USERS</Link></li>
-                    {/* {
-                        admin && <li><Link to='/dashboard/allUsers'>ALL USERS</Link></li>
-                    } */}
+                    {
+                        <li className='text-sm text-lime-500 '><Link to='/dashboard/users'> <FiUsers/> USERS</Link></li>
+                    }
+                    
                 </ul>
 
             </div>

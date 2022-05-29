@@ -19,7 +19,6 @@ const Users = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Job</th>
-                            <th>Favorite Color</th>
                         </tr>
                     </thead>
                     <tbody>        
