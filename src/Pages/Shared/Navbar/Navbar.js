@@ -22,7 +22,7 @@ const Navbar = () => {
                         <li className='btn btn-outline btn-error rounded-lg'><Link to='/'>HOME</Link></li>
                         <li className='btn btn-outline btn-primary  rounded-lg'><Link to='/blogs'>BLOGS</Link></li>
                         
-                        <li className='btn btn-outline btn-warning rounded-lg font-bold'><Link to='/addReview'>ADD REVIEW</Link></li>
+                        {/* <li className='btn btn-outline btn-warning rounded-lg font-bold'><Link to='/addReview'>ADD REVIEW</Link></li> */}
                         <li className='btn btn-outline btn-success rounded-lg font-bold'><Link to='/dashboard'>DASHBOARD</Link></li>
 
                         <li >
@@ -44,8 +44,10 @@ const Navbar = () => {
                     <li className='btn btn-outline btn-error rounded-full font-bold'><Link to='/'>HOME</Link></li>
                     <li className='btn btn-outline btn-primary rounded-full font-bold'><Link to='/blogs'>BLOGS</Link></li>
                     
-                    <li className='btn btn-outline btn-warning rounded-full font-bold'><Link to='/addReview'>ADD REVIEW</Link></li>
-                    <li className='btn btn-outline btn-success rounded-full font-bold'><Link to='/dashboard'>DASHBOARD</Link></li>
+                    {/* <li className='btn btn-outline btn-warning rounded-full font-bold'><Link to='/addReview'>ADD REVIEW</Link></li> */}
+                    {
+                        user && <li className='btn btn-outline btn-success rounded-full font-bold'><Link to='/dashboard'>DASHBOARD</Link></li>
+                    }
 
                     <li className='btn btn-outline btn-secondary font-bold rounded-full'>
                         {

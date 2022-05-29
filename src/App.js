@@ -11,10 +11,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import RequireAuth from './Pages/Login/RequireAuth';
 import Purchase from './Pages/Purchase/Purchase';
 import NotFound from './Pages/Shared/NotFound/NotFound';
-import AddReview from './Pages/AddReview/AddReview';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import MyReviews from './Pages/Dashboard/MyReviews';
+import AddReview from './Pages/Dashboard/AddReview';
 
 
 function App() {
@@ -31,18 +31,18 @@ function App() {
              <Purchase></Purchase>
             </RequireAuth>
          }></Route> 
-         <Route  path='/addReview' element={
+         {/* <Route  path='/addReview' element={
            <RequireAuth>
              <AddReview></AddReview>
             </RequireAuth>
-         }></Route> 
+         }></Route>  */}
          <Route  path='/dashboard' element={
            <RequireAuth>
              <Dashboard></Dashboard>
             </RequireAuth>
          }>
            <Route index element={<MyOrders></MyOrders>}></Route>
-           {/* <Route path='/addReviews' element={<AddReview></AddReview>}></Route> */}
+           <Route path='/dashboard/addReviews' element={<AddReview></AddReview>}></Route>
            </Route> 
          <Route  path='*' element={<NotFound></NotFound>}></Route> 
       </Routes>
