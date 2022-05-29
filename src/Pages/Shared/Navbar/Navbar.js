@@ -11,6 +11,7 @@ const Navbar = () => {
     const [user,loading] = useAuthState(auth);
     const handleSignOut = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken');
     }
     if(loading){
         return <Loading></Loading>
