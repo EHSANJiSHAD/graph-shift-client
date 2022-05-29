@@ -5,23 +5,23 @@ import auth from '../../firebase.init';
 // import { MdOutlineDelete } from 'react-icons/md';
 
 const MyOrders = () => {
-    const [orders,setOrders] = useState([]);
+    const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
-    useEffect(()=>{
-        if(user){
-            fetch(`http://localhost:5000/order?buyer=${user.email}`)
-        .then(res=>res.json())
-        .then(data=>{
-            setOrders(data);
-            console.log(data)
-        })
+    useEffect(() => {
+        if (user) {
+            fetch(`https://blooming-atoll-01401.herokuapp.com/order?buyer=${user.email}`)
+                .then(res => res.json())
+                .then(data => {
+                    setOrders(data);
+                    console.log(data)
+                })
         }
-    },[orders])
+    }, [orders])
 
-    const handleDelete = id =>{
+    const handleDelete = id => {
         const proceed = window.confirm('ARE YOU SURE YOU WANT TO CANCEL?');
         if (proceed) {
-            fetch(`http://localhost:5000/order/${id}`, {
+            fetch(`https://blooming-atoll-01401.herokuapp.com/order/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -57,8 +57,8 @@ const MyOrders = () => {
                                 <td className='text-error'>{o.item}</td>
                                 <td className='text-error'>{o.address}</td>
                                 <td className='text-error'>{o.phone}</td>
-                                <td><button onClick={()=>handleDelete(o._id)} className='text-error text-sm btn btn-outline btn-error rounded-full '>CANCEL</button></td>
-                                <td><button  className='text-error text-sm btn btn-outline btn-success rounded-full '>PAY</button></td>
+                                <td><button onClick={() => handleDelete(o._id)} className='text-error text-sm btn btn-outline btn-error rounded-full '>CANCEL</button></td>
+                                <td><button className='text-error text-sm btn btn-outline btn-success rounded-full '>PAY</button></td>
                             </tr>)
                         }
 

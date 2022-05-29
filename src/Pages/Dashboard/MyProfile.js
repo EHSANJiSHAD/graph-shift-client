@@ -13,29 +13,29 @@ const MyProfile = () => {
     const locationRef = useRef('')
     const numberRef = useRef('')
     const linkedInRef = useRef('')
-   
+
     const handleUpdateInfo = async id => {
 
-            const email = user.email;
-            const name = user.displayName;
-            const education = educationRef.current.value;
-            const location = locationRef.current.value;
-            const number = numberRef.current.value;
-            const linkedIn = linkedInRef.current.value;
+        const email = user.email;
+        const name = user.displayName;
+        const education = educationRef.current.value;
+        const location = locationRef.current.value;
+        const number = numberRef.current.value;
+        const linkedIn = linkedInRef.current.value;
 
-            const userInfo ={
-                education,
-                location,
-                number,
-                linkedIn,
-            }
-        
-    //    event.preventDefault();
-        fetch(`http://localhost:5000/user/${id}`, {
+        const userInfo = {
+            education,
+            location,
+            number,
+            linkedIn,
+        }
+
+        //    event.preventDefault();
+        fetch(`https://blooming-atoll-01401.herokuapp.com/user/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
-               
+
             },
             body: JSON.stringify(userInfo)
         })
@@ -58,9 +58,9 @@ const MyProfile = () => {
                 <input className='bg-slate-700 rounded-2xl text-lime-500 pl-3' ref={locationRef} placeholder='LOCATION' type="text" />
                 <input className='bg-slate-700 rounded-2xl text-lime-500 pl-3' ref={numberRef} placeholder='PHONE' type="text" />
                 <input className='bg-slate-700 rounded-2xl text-lime-500 pl-3' ref={linkedInRef} placeholder='LINKEDIN ID' type="text" />
-                <input type="button" onClick={()=>handleUpdateInfo(user.email)} className='btn btn-outline btn-success' value="SUBMIT" />
+                <input type="button" onClick={() => handleUpdateInfo(user.email)} className='btn btn-outline btn-success' value="SUBMIT" />
             </div>
-           
+
         </div>
     );
 };

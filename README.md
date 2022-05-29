@@ -1,6 +1,6 @@
 # GRAPH SHIFT 
 GRAPH SHIFT is a graphics card company manufacturing system application.Here you can manage your item's inventories by adding new item and their details along with editing those books quantity.
- [GRAPH SHIFT INVENTORY LIVE SITE](https://bangla-boi-2bb42.web.app).
+ [GRAPH SHIFT INVENTORY LIVE SITE](https://graph-shift.web.app/).
 
 # Features and Functionality
 * This is a single page application (SPA)

@@ -9,10 +9,10 @@ const AddReview = () => {
     const [user] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    
+
     const onSubmit = async data => {
         console.log(data);
-        fetch(`http://localhost:5000/review`, {
+        fetch(`https://blooming-atoll-01401.herokuapp.com/review`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
