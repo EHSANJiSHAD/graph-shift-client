@@ -21,6 +21,10 @@ const Navbar = () => {
                     <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100  w-52 drop-shadow-2xl border-0 font-bold rounded-full">
                         <li className='btn btn-outline btn-error rounded-lg'><Link to='/'>HOME</Link></li>
                         <li className='btn btn-outline btn-primary  rounded-lg'><Link to='/blogs'>BLOGS</Link></li>
+                        
+                        <li className='btn btn-outline btn-warning rounded-lg font-bold'><Link to='/addReview'>ADD REVIEW</Link></li>
+                        <li className='btn btn-outline btn-success rounded-lg font-bold'><Link to='/dashboard'>DASHBOARD</Link></li>
+
                         <li >
                             {
                                 user ? <button onClick={handleSignOut} className='btn btn-outline btn-secondary rounded-lg'>SIGN OUT</button>
@@ -28,7 +32,6 @@ const Navbar = () => {
                                     <Link className='btn btn-outline btn-secondary  rounded-lg' to='/login'>LOGIN</Link>
                             }
                         </li>
-                        <li className='btn btn-outline btn-warning rounded-xl font-bold'><Link to='/addReview'>ADD REVIEW</Link></li>
 
                     </ul>
                 </div>
@@ -40,6 +43,10 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal p-0   hover:none">
                     <li className='btn btn-outline btn-error rounded-full font-bold'><Link to='/'>HOME</Link></li>
                     <li className='btn btn-outline btn-primary rounded-full font-bold'><Link to='/blogs'>BLOGS</Link></li>
+                    
+                    <li className='btn btn-outline btn-warning rounded-full font-bold'><Link to='/addReview'>ADD REVIEW</Link></li>
+                    <li className='btn btn-outline btn-success rounded-full font-bold'><Link to='/dashboard'>DASHBOARD</Link></li>
+
                     <li className='btn btn-outline btn-secondary font-bold rounded-full'>
                         {
                             user
@@ -48,7 +55,6 @@ const Navbar = () => {
                                 <Link to='/login'>LOGIN</Link>
                         }
                     </li>
-                    <li className='btn btn-outline btn-warning rounded-full font-bold'><Link to='/addReview'>ADD REVIEW</Link></li>
 
                 </ul>
             </div>
@@ -56,6 +62,11 @@ const Navbar = () => {
                 {
                     user ? <button class=" hidden lg:block btn btn-outline btn-warning rounded-full">{user.displayName}</button> : ''
                 }
+            </div>
+            <div className="navbar-end">
+                <label tabindex="1" for="my-drawer-2" className="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
             </div>
             {/* <div className="navbar-end avatar ">
                 <div className='hidden   lg:block rounded-full w-12 ring ring-primary ring-offset-base-100 ring-offset-2'>

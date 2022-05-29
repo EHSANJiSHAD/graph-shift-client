@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const Purchase = () => {
@@ -21,6 +22,32 @@ const Purchase = () => {
         // const minQuantity = purchaseItems.minimum_order_quantity;
 
     }
+    const handleOrder = event=>{
+        event.preventDefault();
+        const address = event.target.address.value;
+        const phone = event.target.phone.value;
+        const order ={
+            itemId : purchaseItems._id,
+            item : purchaseItems.name,
+            buyer : user.email,
+            buyerName: user.displayName,
+            address,
+            phone,
+        }
+        fetch('http://localhost:5000/order',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(order)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            toast('ORDER ADDED');
+        })
+    }
+    
     const onquantitySubmit = async data => {
         console.log(data);
 
@@ -94,8 +121,8 @@ const Purchase = () => {
                     <div className="card w-96 bg-base-100 shadow-xl bg-gradient-to-t from-slate-800 to-white-300 drop-shadow-2xl">
                         <div className="card-body">
                             <h2 className="text-2xl font-bold text-center text-error mb-5">PLACE ORDER</h2>
-
-                            <form onSubmit={handleSubmit(onSubmit)}>
+{/* ORDER FORM STARTS */}
+                            <form onSubmit={handleOrder}>
 
                                 <div class="form-control w-full max-w-xs mb-5">
                                     <input
@@ -103,7 +130,7 @@ const Purchase = () => {
                                         placeholder="NAME"
                                         class="input input-bordered w-full max-w-xs"
                                         value={user.displayName.toUpperCase()}
-                                        disabled
+                                        // disabled
                                     />
 
                                 </div>
@@ -113,11 +140,11 @@ const Purchase = () => {
                                         placeholder="EMAIL"
                                         class="input input-bordered w-full max-w-xs"
                                         value={user.email}
-                                        disabled
+                                        // disabled
                                     />
                                     <label class="label">
-                                        {errors.email?.type === 'required' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
-                                        {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
+                                        {errors.email?.type === 'required' && <span class="label-text-alt text-error">{errors.email.message}</span>}
+                                        {errors.email?.type === 'pattern' && <span class="label-text-alt text-error">{errors.email.message}</span>}
 
                                     </label>
                                 </div>
