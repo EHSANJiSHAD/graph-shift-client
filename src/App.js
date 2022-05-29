@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import RequireAuth from './Pages/Login/RequireAuth';
 import Purchase from './Pages/Purchase/Purchase';
 import NotFound from './Pages/Shared/NotFound/NotFound';
+import AddReview from './Pages/AddReview/AddReview';
 
 
 function App() {
@@ -25,6 +26,11 @@ function App() {
          <Route  path='/purchase/:id' element={
            <RequireAuth>
              <Purchase></Purchase>
+            </RequireAuth>
+         }></Route> 
+         <Route  path='/addReview' element={
+           <RequireAuth>
+             <AddReview></AddReview>
             </RequireAuth>
          }></Route> 
          <Route  path='*' element={<NotFound></NotFound>}></Route> 

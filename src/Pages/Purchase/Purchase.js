@@ -15,10 +15,10 @@ const Purchase = () => {
             .then(res => res.json())
             .then(data => setPurchaseItems(data))
     }, [purchaseItems])
-    const onSubmit = async data => {
+    const onSubmit = data => {
         console.log(data);
 
-        const minQuantity = purchaseItems.minimum_order_quantity;
+        // const minQuantity = purchaseItems.minimum_order_quantity;
 
     }
     const onquantitySubmit = async data => {

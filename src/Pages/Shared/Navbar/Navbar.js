@@ -8,12 +8,11 @@ import './Navbar.css'
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
-    console.log(user)
-    const handleSignOut = ()=>{
+    const handleSignOut = () => {
         signOut(auth);
     }
     return (
-        <div className="navbar bg-base-100  drop-shadow-2xl rounded-lg">
+        <div className="navbar bg-base-100   rounded-lg">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -24,12 +23,13 @@ const Navbar = () => {
                         <li className='btn btn-outline btn-primary  rounded-lg'><Link to='/blogs'>BLOGS</Link></li>
                         <li >
                             {
-                                user ? <button onClick={handleSignOut} className='btn btn-outline btn-secondary rounded-lg font-bold'>SIGN OUT</button>
-                                 : 
-                                 <Link className='btn btn-outline btn-secondary  rounded-lg' to='/login'>LOGIN</Link>
+                                user ? <button onClick={handleSignOut} className='btn btn-outline btn-secondary rounded-lg'>SIGN OUT</button>
+                                    :
+                                    <Link className='btn btn-outline btn-secondary  rounded-lg' to='/login'>LOGIN</Link>
                             }
                         </li>
-                        
+                        <li className='btn btn-outline btn-warning rounded-xl font-bold'><Link to='/addReview'>ADD REVIEW</Link></li>
+
                     </ul>
                 </div>
                 <a className="btn btn-ghost   rounded-full ">
@@ -38,20 +38,26 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex  drop-shadow-2xl border-0 font-bold  rounded-full">
                 <ul className="menu menu-horizontal p-0   hover:none">
-                <li className='btn btn-outline btn-error rounded-full font-bold'><Link to='/'>HOME</Link></li>
-                <li className='btn btn-outline btn-primary rounded-full font-bold'><Link to='/blogs'>BLOGS</Link></li>
-                <li className='btn btn-outline btn-secondary font-bold rounded-full'>
-                            {
-                                user 
+                    <li className='btn btn-outline btn-error rounded-full font-bold'><Link to='/'>HOME</Link></li>
+                    <li className='btn btn-outline btn-primary rounded-full font-bold'><Link to='/blogs'>BLOGS</Link></li>
+                    <li className='btn btn-outline btn-secondary font-bold rounded-full'>
+                        {
+                            user
                                 ? <button className='font-bold' onClick={handleSignOut} >SIGN OUT</button>
-                                 : 
-                                 <Link  to='/login'>LOGIN</Link>
-                            }
-                        </li>
-                    
+                                :
+                                <Link to='/login'>LOGIN</Link>
+                        }
+                    </li>
+                    <li className='btn btn-outline btn-warning rounded-full font-bold'><Link to='/addReview'>ADD REVIEW</Link></li>
+
                 </ul>
             </div>
-            <div className="navbar-end avatar ">
+            <div class="navbar-end">
+                {
+                    user ? <button class=" hidden lg:block btn btn-outline btn-warning rounded-full">{user.displayName}</button> : ''
+                }
+            </div>
+            {/* <div className="navbar-end avatar ">
                 <div className='hidden   lg:block rounded-full w-12 ring ring-primary ring-offset-base-100 ring-offset-2'>
                 <h6 className=" rounded-full ">
                     {
@@ -60,7 +66,7 @@ const Navbar = () => {
                 </h6>
                 </div>
                 
-            </div>
+            </div> */}
         </div>
     );
 };
