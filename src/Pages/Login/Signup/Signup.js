@@ -3,11 +3,13 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import useToken from '../../../hooks/useToken';
 
 const Signup = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [updateProfile, updating, userError] = useUpdateProfile(auth);
+    
 
     //////////////////CREATE USER WITH EMAIL PASS////////////////////////////
         const [
@@ -17,6 +19,7 @@ const Signup = () => {
             error,
           ] = useCreateUserWithEmailAndPassword(auth);
     //////////////////CREATE USER WITH EMAIL PASS////////////////////////////
+    const [token] = useToken(user || gUser);
     const navigate = useNavigate();
     let signInErrorMsg;
     if(error||gError||userError){
@@ -32,7 +35,7 @@ const Signup = () => {
         await updateProfile({ displayName:data.name});
         
     }
-    if(user || gUser){
+    if(token){
         navigate('/')
     }
     return (
@@ -114,7 +117,7 @@ const Signup = () => {
                         <small><p>Already have an account? <Link to='/login' className='text-success '>Please Login</Link></p></small>
                         <div className="divider text-success">OR</div>
 
-                        <button  className="btn btn-outline btn-success">CONTINUE WITH GOOGLE</button>
+                        <button onClick={()=>signInWithGoogle()}  className="btn btn-outline btn-success">CONTINUE WITH GOOGLE</button>
                 </div>
             </div>
         </div>

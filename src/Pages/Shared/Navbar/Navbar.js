@@ -4,12 +4,16 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo/logo.png'
 import auth from '../../../firebase.init';
+import Loading from '../Loading';
 import './Navbar.css'
 
 const Navbar = () => {
-    const [user] = useAuthState(auth);
+    const [user,loading] = useAuthState(auth);
     const handleSignOut = () => {
         signOut(auth);
+    }
+    if(loading){
+        return <Loading></Loading>
     }
     return (
         <div className="navbar bg-base-100   rounded-lg">
@@ -21,9 +25,12 @@ const Navbar = () => {
                     <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100  w-52 drop-shadow-2xl border-0 font-bold rounded-full">
                         <li className='btn btn-outline btn-error rounded-lg'><Link to='/'>HOME</Link></li>
                         <li className='btn btn-outline btn-primary  rounded-lg'><Link to='/blogs'>BLOGS</Link></li>
-                        
+
                         {/* <li className='btn btn-outline btn-warning rounded-lg font-bold'><Link to='/addReview'>ADD REVIEW</Link></li> */}
-                        <li className='btn btn-outline btn-success rounded-lg font-bold'><Link to='/dashboard'>DASHBOARD</Link></li>
+                        {
+                            user && <li className='btn btn-outline btn-success rounded-lg font-bold'><Link to='/dashboard'>DASHBOARD</Link></li>
+                        }
+                        <li className='btn btn-outline btn-accent rounded-lg font-bold'><Link to='/myPortfolio'>PORTFOLIO</Link></li>
 
                         <li >
                             {
@@ -43,11 +50,13 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal p-0   hover:none">
                     <li className='btn btn-outline btn-error rounded-full font-bold'><Link to='/'>HOME</Link></li>
                     <li className='btn btn-outline btn-primary rounded-full font-bold'><Link to='/blogs'>BLOGS</Link></li>
-                    
+                   
+
                     {/* <li className='btn btn-outline btn-warning rounded-full font-bold'><Link to='/addReview'>ADD REVIEW</Link></li> */}
                     {
                         user && <li className='btn btn-outline btn-success rounded-full font-bold'><Link to='/dashboard'>DASHBOARD</Link></li>
                     }
+                     <li className='btn btn-outline btn-accent rounded-full font-bold'><Link to='/myPortfolio'>PORTFOLIO</Link></li>
 
                     <li className='btn btn-outline btn-secondary font-bold rounded-full'>
                         {
@@ -61,9 +70,11 @@ const Navbar = () => {
                 </ul>
             </div>
             <div class="navbar-end">
-                {
-                    user ? <button class=" hidden lg:block btn btn-outline btn-warning rounded-full">{user.displayName}</button> : ''
-                }
+                
+                     {
+                         user? <h2 className='text-warning border p-2 hidden lg:block rounded-full border-warning'>{user.displayName} </h2>:' '
+                     }
+                
             </div>
             <div className="navbar-end">
                 <label tabindex="1" for="my-drawer-2" className="btn btn-ghost lg:hidden">
