@@ -23,7 +23,7 @@ const MyPortfolio = () => {
                 <h5>LIVE SITE LINKS:</h5>
                 <h1>BANGLA BOI [ https://bangla-boi-2bb42.web.app/ ]</h1>
                 <h1>SELF MADE [ https://self-made-1947d.web.app/ ]</h1>
-                <h1>GRAPH SHIFT [ https://self-made-1947d.web.app/ ]</h1>
+                <h1>GRAPH SHIFT [ https://graph-shift.web.app/ ]</h1>
             </div>
 
         </div>

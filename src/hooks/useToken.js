@@ -6,7 +6,7 @@ const useToken = user => {
         const email = user?.user?.email;
 
         const currentUser = { email: email }
-        console.log('user from hook', email);
+        // console.log('user from hook', email);
         if (email) {
             fetch(`https://blooming-atoll-01401.herokuapp.com/newUser/${email}`, {
                 method: 'PUT',
