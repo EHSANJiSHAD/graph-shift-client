@@ -6,7 +6,7 @@ const Blogs = () => {
         <div className='text-center'>
             <h2 className='text-2xl text-primary'>BLOGS</h2>
 
-            <h2>1. How will you improve the performance of a React Application?</h2>
+            {/* <h2>1. How will you improve the performance of a React Application?</h2>
             <p>ANS: Wherever possible, i should try to keep component state local.In React, I may use windowing or virtualization to create a virtualized list.By preventing Lazy loading images in React and by using immutable data structures.</p>
 
             <h2>2. What are the different ways to manage a state in a React application?</h2>
@@ -18,7 +18,7 @@ const Blogs = () => {
             <h2>4. What is a unit test? Why should write unit tests?</h2>
             <p>ANS:Individual units or components of software are tested in unit testing.So the main purpose is to check each and every code of a specific software to find out as it turned out to be as expected</p>
             <h2>5. Why you do not set the state directly in React?</h2>
-            <p>ANS:It is never a good idea to change the state directly because,If we update it immediately, the update you made may be overwritten if we execute setState() later.And another thing,this.state is not changed instantly when you directly update the state. Instead, it generates a pending state transition, which will only yield the current value if accessed after using this function.</p>
+            <p>ANS:It is never a good idea to change the state directly because,If we update it immediately, the update you made may be overwritten if we execute setState() later.And another thing,this.state is not changed instantly when you directly update the state. Instead, it generates a pending state transition, which will only yield the current value if accessed after using this function.</p> */}
         </div>
     );
 };

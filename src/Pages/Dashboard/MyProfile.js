@@ -31,7 +31,7 @@ const MyProfile = () => {
         }
 
         //    event.preventDefault();
-        fetch(`https://blooming-atoll-01401.herokuapp.com/user/${id}`, {
+        fetch(`http://localhost:5000/user/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

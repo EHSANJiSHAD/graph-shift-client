@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import User from './User';
 
 const Users = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://blooming-atoll-01401.herokuapp.com/newUser').then(res => res.json()))
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/newUser').then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>
     }

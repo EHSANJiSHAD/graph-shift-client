@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useToken = user => {
     const [token, setToken] = useState('');
@@ -8,7 +8,7 @@ const useToken = user => {
         const currentUser = { email: email }
         // console.log('user from hook', email);
         if (email) {
-            fetch(`https://blooming-atoll-01401.herokuapp.com/newUser/${email}`, {
+            fetch(`http://localhost:5000/newUser/${email}`, {
                 method: 'PUT',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(currentUser),

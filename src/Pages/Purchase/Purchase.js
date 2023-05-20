@@ -12,7 +12,7 @@ const Purchase = () => {
     const [user] = useAuthState(auth);
 
     useEffect(() => {
-        fetch(`https://blooming-atoll-01401.herokuapp.com/item/${id}`)
+        fetch(`http://localhost:5000/item/${id}`)
             .then(res => res.json())
             .then(data => setPurchaseItems(data))
     }, [purchaseItems])
@@ -34,7 +34,7 @@ const Purchase = () => {
             address,
             phone,
         }
-        fetch('https://blooming-atoll-01401.herokuapp.com/order', {
+        fetch('http://localhost:5000/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

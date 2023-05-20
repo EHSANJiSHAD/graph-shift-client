@@ -27,7 +27,7 @@ const Login = () => {
     //////////////////SIGNIN WITH EMAIL PASS////////////////////////////
     const [token] = useToken(user || gUser);
 
-    if(token){
+    if(user||gUser){
         navigate(from, { replace: true });
     }
     

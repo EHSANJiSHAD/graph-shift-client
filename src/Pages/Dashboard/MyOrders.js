@@ -1,5 +1,7 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 // import { MdOutlineDelete } from 'react-icons/md';
@@ -7,21 +9,38 @@ import auth from '../../firebase.init';
 const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            fetch(`https://blooming-atoll-01401.herokuapp.com/order?buyer=${user.email}`)
-                .then(res => res.json())
+            fetch(`http://localhost:5000/order?buyer=${user.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => {
+                    console.log('res', res)
+                    if (res.status === 401) {
+                        signOut(auth);
+                        localStorage.removeItem('accessToken');
+                        navigate('/')
+                    }
+                    else if (res.status === 403) {
+
+                    }
+                    return res.json()
+                })
                 .then(data => {
                     setOrders(data);
                     // console.log(data)
                 })
         }
-    }, [orders])
+    }, [user])
 
     const handleDelete = id => {
         const proceed = window.confirm('ARE YOU SURE YOU WANT TO CANCEL?');
         if (proceed) {
-            fetch(`https://blooming-atoll-01401.herokuapp.com/order/${id}`, {
+            fetch(`http://localhost:5000/order/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
